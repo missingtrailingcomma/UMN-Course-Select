@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  .courseSearchForm
+    .form-group.col-md-2
+      select.form-control(id='campusSelect')
+        each campus in campuses
+          if campus == 'UMNTC'
+            option(selected)= campus
+          else
+            option= campus
+    .form-group.col-md-2
+      select.form-control(id='termSelect')
+        each term, term_id in terms
+          if term_id == currentTermId
+            option(value=term_id selected)= term
+          else
+            option(value= term_id)= term
+    .form-group.col-md-3
+      select.form-control(id='subjectSelect')
+    .form-group.col-md-3
+      input.form-control(id='levelRangeSelect' type='text' placeholder='4061 or 4061- or 4000-8000' value="4061")
+    .col-md-2.button
+      button.btn.btn-primary#courseSearch= "Search!"
+  .courseData

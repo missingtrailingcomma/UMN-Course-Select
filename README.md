@@ -1,1 +1,1 @@
-# UMN-Course-Select
+#UMN Course select

@@ -1,0 +1,38 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+select {
+   -webkit-appearance: none;
+}
+
+.courseSearchForm {
+  overflow: auto;
+  text-align: center;
+}
+
+.button {
+  margin-bottom: 15px;
+  float: left;
+}
+
+.btn {
+  width: 100%;
+}
+
+dt, dd {
+  display: inline;
+}
+
+dd {
+  float: right;
+}
+
+.courseData header {
+  font-weight: 700;
+}
