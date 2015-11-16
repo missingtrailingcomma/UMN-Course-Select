@@ -6,12 +6,12 @@ var showSubjects = function () {
   $.getJSON(url, function (results){
     var subjects = results.subjects.sort(function (a, b) {
       if (a.subject_id > b.subject_id) {
-        return 1
+        return 1;
       }
       if (a.subject_id < b.subject_id) {
-        return -1
+        return -1;
       }
-      return 0
+      return 0;
     })
     for (var i in subjects) {
       var subject = subjects[i]
@@ -27,7 +27,7 @@ var showCourses = function () {
   var catalog_number = $('#levelRangeSelect').val()
 
   $('.courseData').empty()
-  var url = 'http://courses-staging.umn.edu/campuses/' + campus.toLowerCase() + '/terms/' + term_id + '/courses.json?q='
+  var url = 'http://courses.umn.edu/campuses/' + campus.toLowerCase() + '/terms/' + term_id + '/courses.json?q='
   catalog_number = catalog_number.split('-')
   if (catalog_number.length === 0) {
     $('#subjectSelect').val('1000')
@@ -39,9 +39,7 @@ var showCourses = function () {
   } else if (catalog_number.length === 2 && Number(catalog_number[0]) && catalog_number[1] === '') {
     url += 'catalog_number>=' + catalog_number[0] + ','
   } else {
-    console.log(Number(catalog_number))
-    console.log(Number(catalog_number[1]).length)
-    $('#levelRangeSelect').val('4061')
+    $('#levelRangeSelect').val('');
     return
   }
   url += 'subject_id=' + subject_id
@@ -62,10 +60,10 @@ var showCourses = function () {
 }
 
 
-$('#campusSelect').change(showSubjects)
-$('#termSelect').change(showSubjects)
-$('#courseSearch').click(showCourses)
+$('#campusSelect').change(showSubjects);
+$('#termSelect').change(showSubjects);
+$('#courseSearch').click(showCourses);
 
 $(function () {
-  showSubjects()
-})
+  showSubjects();
+});
